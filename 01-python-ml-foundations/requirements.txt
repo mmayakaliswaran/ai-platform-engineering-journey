@@ -1,0 +1,33 @@
+Build a small document-search program.
+
+Each document should contain:
+
+id
+title
+text
+category
+
+Create around 5 documents.
+
+For example:
+
+Spring Boot Microservices
+Kubernetes Deployment
+AWS Architecture
+RAG Architecture
+MCP Tools
+
+Then implement:
+
+search(keyword)
+
+It should return documents containing the keyword.
+
+Then improve it to:
+
+search(keyword, category=None)
+
+For example:
+
+search("AWS")
+search("AWS", category="cloud")
