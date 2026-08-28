@@ -8,3 +8,5 @@ python -m pip install fastapi "uvicorn[standard]" pydantic pytest
 python -m pip freeze > requirements.txt
 python -m uvicorn app.main:app --reload
 
+python -m pytest
+
