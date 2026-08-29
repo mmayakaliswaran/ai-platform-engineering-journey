@@ -12,3 +12,6 @@ python -m pytest
 
 python -m pip install numpy
 
+python -m pip install sentence-transformers
+python -m pip install --upgrade pip
+python -m pip install sentence-transformers --no-cache-dir

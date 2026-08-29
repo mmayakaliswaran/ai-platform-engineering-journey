@@ -17,3 +17,12 @@ Concepts practiced:
 - Service layer
 - pytest
 - 5 passing service tests
+
+### Day 3
+- NumPy
+- Vectors
+- Cosine similarity
+- Top-K
+- Real embedding model
+- Semantic Search
+- RAG
