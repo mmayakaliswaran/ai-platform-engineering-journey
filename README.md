@@ -10,3 +10,5 @@ python -m uvicorn app.main:app --reload
 
 python -m pytest
 
+python -m pip install numpy
+
