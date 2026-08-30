@@ -1,5 +1,6 @@
 import chromadb
 from app.data import all_docs
+from app.retriever import Retriever
 from sentence_transformers import SentenceTransformer
 
 client = chromadb.PersistentClient(path="./chroma_data")
@@ -65,6 +66,14 @@ for document, metadata, distance in zip(
         f"distance={distance:.4f} | "
         f"text={document}"
     )
+
+retriever = Retriever()
+retriever_search = retriever.search("cloud infrastructure design")
+
+print("****************************************\nRetriever Search Results:")
+
+for doc in retriever_search:
+    print(doc)
 
 """
 all_docs

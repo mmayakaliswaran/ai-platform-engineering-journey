@@ -27,3 +27,13 @@ class SemanticSearchResponse(BaseModel):
 
 class SemanticSearchResults(BaseModel):
     results: list[SemanticSearchResponse]
+
+class RetrievedDocument(BaseModel):
+    id: int
+    title: str
+    text: str
+    category: str
+    distance: float
+
+class RetrievalResponse(BaseModel):
+    results: list[RetrievedDocument]

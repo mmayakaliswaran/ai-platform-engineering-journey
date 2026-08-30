@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from app.data import all_docs
 from app.service import search, semantic_search
+from app.retriever import Retriever
 from app.models import DocumentResponse, Document, SearchResponse, SemanticSearchResponse, SemanticSearchResults
 
 app = FastAPI()
+retriever = Retriever()
 
 @app.get("/")
 async def docs():
@@ -47,6 +49,34 @@ def generate_semantic_response(
         document: Document,
         score: float
 ) -> SemanticSearchResponse:
+    return SemanticSearchResponse(
+        id=document.id,
+        title=document.title,
+        text=document.text,
+        category=document.category,
+        score=score
+    )
+
+@app.get("/documents/retriever_search",
+         response_model=SemanticSearchResults)
+async def retriever_search_documents(
+        query: str,
+        top_k: int = 2
+)->SearchResponse:
+    results = retriever.search(query, top_k)
+
+    for doc in results["documents"]:
+        print(doc)
+
+    response : list[SemanticSearchResponse] = [
+        generate_retriever_response(doc) for doc in results["documents"]
+    ]
+
+    return SemanticSearchResults(results=response)
+
+def generate_retriever_response(
+        documents: list[Document]
+)-> SemanticSearchResponse:
     return SemanticSearchResponse(
         id=document.id,
         title=document.title,
