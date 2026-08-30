@@ -17,3 +17,5 @@ python -m pip install --upgrade pip
 python -m pip install sentence-transformers --no-cache-dir
 
 python -m uvicorn app.main:app --reload
+
+python -m pip install chromadb

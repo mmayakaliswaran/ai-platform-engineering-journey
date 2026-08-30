@@ -26,3 +26,10 @@ Concepts practiced:
 - Real embedding model
 - Semantic Search
 - RAG
+
+### Day 4
+- Documents
+- Create embeddings
+- Keep embeddings in memory
+- Calculate cosine similarity
+- Sort
