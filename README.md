@@ -15,3 +15,5 @@ python -m pip install numpy
 python -m pip install sentence-transformers
 python -m pip install --upgrade pip
 python -m pip install sentence-transformers --no-cache-dir
+
+python -m uvicorn app.main:app --reload

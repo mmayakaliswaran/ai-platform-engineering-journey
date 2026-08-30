@@ -17,3 +17,13 @@ class DocumentResponse(BaseModel):
 
 class SearchResponse(BaseModel):
     results: list[DocumentResponse]
+
+class SemanticSearchResponse(BaseModel):
+    id: int
+    title: str
+    text: str
+    category: str
+    score: float
+
+class SemanticSearchResults(BaseModel):
+    results: list[SemanticSearchResponse]
